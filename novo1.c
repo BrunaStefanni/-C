@@ -10,5 +10,5 @@ int main(void) { //início (void = retorno vazio = retorno 0)
 
 #include <stdio.h>
 int main(void) {
-    const int LOTACAO_MAXIMA
+    const int LOTACAO_MAXIMA 
 }

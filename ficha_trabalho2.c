@@ -27,7 +27,7 @@ int main() {
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
-        switch(opcao) {
+        switch(opcao) {     // poderia ser feito com if else, mas o switch é mais eficiente para este caso
 
             // 1 - Calculadora de Soma
             case 1: {

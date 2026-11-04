@@ -120,6 +120,9 @@ int main() {
                 printf("Suas tentativas acabaram! O número secreto era %d.\n", numero_secreto);
             }
 
+            printf("Tentativas realizadas: %d\n", numtentativas);
+            printf("Fim do jogo de adivinhação.\n");
+
         } else if (opcao == 4) { // CONVERSOR DE NÚMEROS DECIMAIS - ROMANOS - exercício 5
 
             //variáveis

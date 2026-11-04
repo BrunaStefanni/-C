@@ -60,14 +60,126 @@ int main() {
                 if (numalunos <= 0) {
                     printf("Número de alunos inválido! Retorne um valor acima de 0.\n");
                 }
-            } while (numalunos <= 0);
-
+            } 
             
+            while (numalunos <= 0) { // Validação do número de alunos
+                printf("Número de alunos inválido! Retorne um valor acima de 0.\n");
+                printf("Quantidade de alunos: ");
+                scanf("%d", &numalunos); 
+            } 
+            
+            while (contadoralunos <= numalunos) { // Loop para cada aluno
+                printf("Classificação do aluno %d: ", contadoralunos);
+                scanf("%f", &classificacao);
 
+                if (classificacao >= 0 && classificacao <= 20) { // Validação da classificação
+                    soma += classificacao; // Soma das classificações
+                    if (classificacao >= 10) {
+                        alunosaprovados++; // Incrementa o número de alunos aprovados
+                    } else {
+                        alunosreprovados++; // Incrementa o número de alunos reprovados
+                    }
+                    contadoralunos++; // Incrementa o contador de alunos
+                } 
+            } media = soma / numalunos; // Cálculo da média
+            
 
         } else if (opcao == 3) { // JOGO DE ADIVINHAÇÃO - exercício 4
 
+            //variáveis
+            const int numero_secreto = 7; // Número secreto fixo
+            int tentativa;
+            int numtentativas = 0;
+            int max_tentativas = 3;
+            int acertou = 0; // 0 = não acertou, 1 = acertou
+
+            while (numtentativas < max_tentativas && acertou == 0) { // Loop de tentativas
+                printf("Adivinhe o número secreto (entre 1 e 10): ");
+                scanf("%d", &tentativa);
+
+                if (tentativa == numero_secreto) {
+                    acertou = 1;
+                    printf("Parabéns! Você acertou o número secreto!\n");
+                } else if (tentativa < numero_secreto) {
+                    printf("O número secreto é maior que %d. Tente novamente.\n", tentativa);
+                } else {
+                    printf("O número secreto é menor que %d. Tente novamente.\n", tentativa);            
+                }
+            }
+            // resultado final após as tentativas
+            if (acertou == 0) {
+                printf("Suas tentativas acabaram! O número secreto era %d.\n", numero_secreto);
+            }
+
         } else if (opcao == 4) { // CONVERSOR DE NÚMEROS DECIMAIS - ROMANOS - exercício 5
+
+            //variáveis
+            int numero;
+
+            do { // Solicita ao usuário o número decimal
+                printf("Digite um número decimal (1 a 3999): ");
+                scanf("%d", &numero);
+                if (numero < 1 || numero > 3999) {
+                    printf("Número inválido! Retorne um valor entre 1 e 3999.\n");
+                }
+            } while (numero < 1 || numero > 3999); // Validação do número decimal
+
+            printf("Número decimal: %d\n", numero);
+            printf("Número romano: ");
+
+            while (numero >= 1000) { // Loop para converter o número decimal em romano - Milhar
+                printf("M");
+                numero -= 1000;
+            }
+            if (numero >= 900) { // Loop para converter o número decimal em romano - Centena
+                printf("CM");
+                numero -= 900;
+            }
+            else if (numero >= 500) {
+                printf("D");
+                numero -= 500;
+            }
+            else if (numero >= 400) {
+                printf("CD");
+                numero -= 400;
+            }
+            while (numero >= 100) {
+                printf("C");
+                numero -= 100;
+            }
+            if (numero >= 90) { // Loop para converter o número decimal em romano - Dezena
+                printf("XC");
+                numero -= 90;
+            }
+            else if (numero >= 50) {
+                printf("L");
+                numero -= 50;
+            }
+            else if (numero >= 40) {
+                printf("XL");
+                numero -= 40;
+            }
+            while (numero >= 10) {
+                printf("X");
+                numero -= 10;
+            }
+            if (numero >= 9) { // Loop para converter o número decimal em romano - Unidade
+                printf("IX");
+                numero -= 9;
+            }
+            else if (numero >= 5) {
+                printf("V");
+                numero -= 5;
+            }
+            else if (numero >= 4) {
+                printf("IV");
+                numero -= 4;
+            }
+            while (numero >= 1) {
+                printf("I");
+                numero -= 1;
+            }
+            printf("\n");
 
         } else if (opcao == 0) { // SAIR
 

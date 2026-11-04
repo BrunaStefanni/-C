@@ -128,6 +128,8 @@ int main() {
             //variáveis
             int numero;
 
+            printf("=== Conversor de Números Decimais para Romanos ===\n");
+
             do { // Solicita ao usuário o número decimal
                 printf("Digite um número decimal (1 a 3999): ");
                 scanf("%d", &numero);

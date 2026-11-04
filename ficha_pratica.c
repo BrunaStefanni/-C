@@ -60,9 +60,7 @@ int main() {
                 if (numalunos <= 0) {
                     printf("Número de alunos inválido! Retorne um valor acima de 0.\n");
                 }
-            } 
-            
-            while (numalunos <= 0) { // Validação do número de alunos
+            } while (numalunos <= 0) { // Validação do número de alunos
                 printf("Número de alunos inválido! Retorne um valor acima de 0.\n");
                 printf("Quantidade de alunos: ");
                 scanf("%d", &numalunos); 
@@ -191,8 +189,6 @@ int main() {
 
         }
         
-        
-
     } while (opcao != 0);
 
     printf("Fim do programa.\n");

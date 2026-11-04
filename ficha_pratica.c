@@ -84,7 +84,7 @@ int main() {
                 } else {
                     printf("Classificação inválida! Retorne um valor entre 0 e 20.\n");
                 }
-                
+
             } media = soma / numalunos; // Cálculo da média
 
             printf("=== RESULTADOS ===\n");
@@ -99,7 +99,7 @@ int main() {
             const int numero_secreto = 7; // Número secreto fixo
             int tentativa;
             int numtentativas = 0;
-            int max_tentativas = 3;
+            int max_tentativas = 3; // ou colocaria nno while numtentativas++;
             int acertou = 0; // 0 = não acertou, 1 = acertou
 
             while (numtentativas < max_tentativas && acertou == 0) { // Loop de tentativas

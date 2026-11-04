@@ -55,31 +55,42 @@ int main() {
             float media;
 
             do { // Solicita ao usuário o número de alunos
+                
                 printf("Quantidade de alunos: ");
                 scanf("%d", &numalunos);
+
                 if (numalunos <= 0) {
                     printf("Número de alunos inválido! Retorne um valor acima de 0.\n");
                 }
-            } while (numalunos <= 0) { // Validação do número de alunos
-                printf("Número de alunos inválido! Retorne um valor acima de 0.\n");
-                printf("Quantidade de alunos: ");
-                scanf("%d", &numalunos); 
-            } 
+
+            } while (numalunos <= 0); // Validação do número de alunos
+            
             
             while (contadoralunos <= numalunos) { // Loop para cada aluno
+                
                 printf("Classificação do aluno %d: ", contadoralunos);
                 scanf("%f", &classificacao);
 
                 if (classificacao >= 0 && classificacao <= 20) { // Validação da classificação
                     soma += classificacao; // Soma das classificações
+                    
                     if (classificacao >= 10) {
                         alunosaprovados++; // Incrementa o número de alunos aprovados
                     } else {
                         alunosreprovados++; // Incrementa o número de alunos reprovados
                     }
+                    
                     contadoralunos++; // Incrementa o contador de alunos
-                } 
+                } else {
+                    printf("Classificação inválida! Retorne um valor entre 0 e 20.\n");
+                }
+                
             } media = soma / numalunos; // Cálculo da média
+
+            printf("=== RESULTADOS ===\n");
+            printf("Média da turma: %.2f\n", media);
+            printf("Alunos aprovados: %d\n", alunosaprovados);
+            printf("Alunos reprovados: %d\n", alunosreprovados);
             
 
         } else if (opcao == 3) { // JOGO DE ADIVINHAÇÃO - exercício 4

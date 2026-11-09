@@ -19,13 +19,13 @@ int main() {
         printf("========================================\n");
 
         printf("Escolha uma opcao: ");
-        scanf("%d", &opcao);
+        scanf("%d", &opcao); //recebe a opção do utilizador
 
 
         // EXERCICIO 1 - TABUADA PERSONALIZADA
         if (opcao == 1) {
 
-            int numero, limite;
+            int numero, limite; // o usuário introduz o número e o limite da tabuada é maior que 0
             int soma = 0;
 
             printf("\n=== TABUADA PERSONALIZADA ===\n");
@@ -41,7 +41,7 @@ int main() {
                 scanf("%d", &limite);
             }
 
-            for (int i = 1; i <= limite; i++) {
+            for (int i = 1; i <= limite; i++) { // calcula a tabuada e soma os resultados
 
                 printf("%d x %d = %d\n", numero, i, numero * i);
 

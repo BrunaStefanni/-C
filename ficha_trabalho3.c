@@ -104,7 +104,7 @@ int main() {
 
         else if (opcao == 3) {
 
-            float classificacoes[8];
+            float classificacoes[8]; // array para armazenar as classificações dos 8 alunos
             float soma = 0;
             float media;
             float maior, menor;

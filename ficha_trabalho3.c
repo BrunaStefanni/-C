@@ -55,7 +55,7 @@ int main() {
 
         else if (opcao == 2) {
 
-            int numeros[10];
+            int numeros[10]; // array para armazenar os 10 números inteiros
             int soma = 0;
             int pares = 0;
             int impares = 0;
@@ -65,7 +65,7 @@ int main() {
 
             printf("Introduza 10 numeros:\n");
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 10; i++) { // solução para par e ímpar
 
                 scanf("%d", &numeros[i]);
 
@@ -87,7 +87,7 @@ int main() {
 
             printf("\nOrdem inversa:\n");
 
-            for (int i = 9; i >= 0; i--) {
+            for (int i = 9; i >= 0; i--) { // inicia no índice 9 e decrementa até 0 para imprimir a ordem inversa
                 printf("%d ", numeros[i]);
             }
 

@@ -171,9 +171,9 @@ int main() {
 
         // EXERCICIO 4 - PESQUISA DE VALORES
 
-        else if (opcao == 4) {
+        else if (opcao == 4) { Objetivo: procurar um número dentro de um array de 10 posições.
 
-            int numeros[10];
+            int numeros[10]; // array para armazenar os 10 números inteiros
             int pesquisa;
             int ocorrencias = 0;
 

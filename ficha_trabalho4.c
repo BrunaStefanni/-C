@@ -22,6 +22,11 @@ int main() {
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
+        if (opcao == 1) {
+            
+        }
+
+
 
 
 

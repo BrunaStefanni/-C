@@ -72,7 +72,6 @@ int main() {
         tabuleiro[posicao - 1] = 2;
 
         // VERIFICAR SE O HUMANO GANHOU
-
         if (
             (tabuleiro[0] == 2 && tabuleiro[1] == 2 && tabuleiro[2] == 2) ||
             (tabuleiro[3] == 2 && tabuleiro[4] == 2 && tabuleiro[5] == 2) ||
@@ -126,7 +125,6 @@ int main() {
             }
 
             // VERIFICAR SE O COMPUTADOR GANHOU
-
             if (
                 (tabuleiro[0] == 1 && tabuleiro[1] == 1 && tabuleiro[2] == 1) ||
                 (tabuleiro[3] == 1 && tabuleiro[4] == 1 && tabuleiro[5] == 1) ||

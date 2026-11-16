@@ -61,8 +61,38 @@ int main(void) {
 
         
         } else if (op == 2) { // Exercício 3 - Controlo de Acesso
-        
-        } else if (op == 3) {
+            
+            // Variáveis para armazenar o PIN introduzido e o número de tentativas
+            int pin, tentativas = 0;
+
+            printf("\n=== CONTROLO DE ACESSO ===\n");
+
+            while (tentativas < 3) { // Permite até 3 tentativas para introduzir o PIN 
+
+                printf("Introduza o PIN: ");
+                scanf("%d", &pin);
+
+                tentativas++; // Incrementa o número de tentativas
+
+                if (pin == 2468) { // Verifica se o PIN está correto
+                    printf("Acesso autorizado!\n");
+                    break; // Sai do loop se o PIN estiver correto
+                }
+                else { // Caso o PIN esteja incorreto..
+                    printf("PIN incorreto.\n");
+
+                    if (tentativas < 3) { // Informa o utilizador do número de tentativas restantes
+                        printf("Restam %d tentativas.\n", 3 - tentativas);
+                    }
+                }
+            }
+
+            if (pin != 2468) { // Se o PIN estiver incorreto após 3 tentativas, bloqueia o acesso
+                printf("Acesso bloqueado!\n");
+            }
+
+        } else if (op == 3) { // Exercício 4 - Sequências Numéricas
+            
         
         } else if (op == 4) {
         

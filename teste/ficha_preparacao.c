@@ -183,11 +183,140 @@ int main(void) {
             printf("Primeiro dia da temperatura maxima: %d\n", diaMaxima);
     
         
-        } else if (op == 5) {
-            
-        } else if (op == 6) {
+        } else if (op == 5) { // Exercício 6 - Pesquisa de Produtos
 
-        } else if (op == 7) {
+            int stock[8];
+            int total = 0;
+            int produtosBaixoStock = 0;
+            int produtoConsultar;
+
+            printf("\n=== PESQUISA DE PRODUTOS ===\n");
+
+            for (int i = 0; i < 8; i++) {
+
+                do {
+                    printf("Produto %d: ", i + 1);
+                    scanf("%d", &stock[i]);
+                } while (stock[i] < 0);
+            }
+
+            printf("\nQuantidades:\n");
+
+            for (int i = 0; i < 8; i++) {
+                printf("%d ", stock[i]);
+            }
+
+            for (int i = 0; i < 8; i++) {
+
+                total += stock[i];
+
+                if (stock[i] < 5) {
+                    produtosBaixoStock++;
+                }
+            }
+
+            printf("\n\nTotal de unidades: %d\n", total);
+            printf("Produtos com menos de 5 unidades: %d\n", produtosBaixoStock);
+
+            do {
+                printf("\nNumero do produto a consultar (1 a 8): ");
+                scanf("%d", &produtoConsultar);
+            } while (produtoConsultar < 1 || produtoConsultar > 8);
+
+            printf("Stock do produto %d: %d unidades\n", produtoConsultar, stock[produtoConsultar - 1]);
+            
+        } else if (op == 6) { // Exercício 7 - Desenho de Uma Ampulheta
+            
+            int altura;
+
+            printf("\n=== DESENHO DE UMA AMPULHETA ===\n");
+
+            do {
+                printf("Introduza a altura (2 a 10): ");
+                scanf("%d", &altura);
+            } while (altura < 2 || altura > 10);
+
+            printf("\n");
+
+            for (int i = 0; i < altura; i++) {
+
+                for (int j = 0; j < i; j++) {
+                    printf(" ");
+                }
+
+                for (int j = 0; j < 2 * (altura - i) - 1; j++) {
+                    printf("*");
+                }
+
+                printf("\n");
+            }
+
+            for (int i = altura - 2; i >= 0; i--) {
+
+                for (int j = 0; j < i; j++) {
+                    printf(" ");
+                }
+
+                for (int j = 0; j < 2 * (altura - i) - 1; j++) {
+                    printf("*");
+                }
+
+                printf("\n");
+            }
+
+        } else if (op == 7) { // Exercício 8 - Classificação de Jogadores
+
+            int pontuacoes[6];
+            int auxiliar;
+
+            printf("\n=== CLASSIFICACAO DE JOGADORES ===\n");
+
+            for (int i = 0; i < 6; i++) {
+
+                do {
+                    printf("Pontuacao do jogador %d: ", i + 1);
+                    scanf("%d", &pontuacoes[i]);
+                } while (pontuacoes[i] < 0);
+            }
+
+            printf("\nPontuacoes originais:\n");
+
+            for (int i = 0; i < 6; i++) {
+                printf("%d ", pontuacoes[i]);
+            }
+
+            for (int i = 0; i < 5; i++) {
+
+                for (int j = 0; j < 5 - i; j++) {
+
+                    if (pontuacoes[j] < pontuacoes[j + 1]) {
+
+                        auxiliar = pontuacoes[j];
+                        pontuacoes[j] = pontuacoes[j + 1];
+                        pontuacoes[j + 1] = auxiliar;
+                    }
+                }
+            }
+
+            printf("\n\n=== CLASSIFICACAO FINAL ===\n");
+
+            for (int i = 0; i < 6; i++) {
+                printf("%d. lugar: %d pontos\n",
+                       i + 1, pontuacoes[i]);
+            }
+
+            printf("\nPontuacao vencedora: %d\n", pontuacoes[0]);
+
+            printf("Diferenca entre maior e menor: %d\n",pontuacoes[0] - pontuacoes[5]);
+        }
+
+        else if (opcao == 0) {
+            printf("\nPrograma terminado.\n");
+        }
+
+        else {
+            printf("\nOpcao invalida! Tente novamente.\n");
+        }
 
         } else if (op != 0) {
             printf("Opcao invalida!\n");

@@ -187,19 +187,16 @@ int main(void) {
 
         } else if (op == 4) { // Exercício 5 - Gestão de Consumos
 
-            // Array para guardar os 7 consumos
-            float consumos[7];
-
-            // Restantes variaveis
+            float consumos[7];  // Array para guardar os 7 consumos
             float total = 0;
             float media;
             float maior, menor;
-
             int i;
             int diasAcima = 0;
             int diaMenor = 0;
 
             printf("\n=== GESTAO DE CONSUMOS ===\n");
+            printf("\nIntroduza os valores de consumos de energia dos últimos 7 dias (em kWh):\n");
 
             // Registar os consumos dos 7 dias
             for (i = 0; i < 7; i++) {
@@ -263,9 +260,8 @@ int main(void) {
             printf("Dias acima de 30 kWh: %d\n", diasAcima);
             printf("Dia do menor consumo: %d\n", diaMenor);
 
-        } else if (op == 5) { Exercício 6 - Pesquisa  de Encomendas
+        } else if (op == 5) { //Exercício 6 - Pesquisa  de Encomendas
 
-            // Declaracao das variaveis
             int quantidades[8]; // Array para guardar as 8 quantidades
             int i;
             int total = 0;
@@ -335,7 +331,6 @@ int main(void) {
 
         } else if (op == 6) { // Exercício 7 - Desenho de Um Losango
 
-            // Declarar as variaveis
             int altura;
             int i, j;
 
@@ -380,22 +375,70 @@ int main(void) {
                 printf("\n");
             }
 
-        } else if (op == 7) {
+        } else if (op == 7) { // Exercício 8 - Classificação de Atletas
+
+            float tempos[6], aux;
+            int i, j;
+
+            // Ler os tempos dos 6 atletas
+            for (i = 0; i < 6; i++) {
+
+                do {
+                    printf("Introduza o tempo do atleta (em segundos) %d: ", i + 1);
+                    scanf("%f", &tempos[i]);
+
+                    if (tempos[i] <= 0) {
+                        printf("O tempo tem de ser superior a zero!\n");
+                    }
+
+                } while (tempos[i] <= 0);
+            }
+
+            // Mostrar os tempos pela ordem original
+            printf("\nTempos pela ordem de entrada:\n");
+
+            for (i = 0; i < 6; i++) {
+                printf("Atleta %d: %.2f segundos\n", i + 1, tempos[i]);
+            }
+
+            // Ordenar os tempos do menor para o maior
+            for (i = 0; i < 5; i++) {
+
+                for (j = 0; j < 5 - i; j++) {
+
+                    if (tempos[j] > tempos[j + 1]) {
+
+                        // Trocar os tempos de posição
+                        aux = tempos[j];
+                        tempos[j] = tempos[j + 1];
+                        tempos[j + 1] = aux;
+                    }
+                }
+            }
+
+            // Mostrar a classificação final
+            printf("\nCLASSIFICACAO FINAL:\n");
+
+            for (i = 0; i < 6; i++) {
+                printf("%d lugar: %.2f segundos\n", i + 1, tempos[i]);
+            }
+
+            // Mostrar o melhor tempo
+            printf("\nMelhor tempo: %.2f segundos\n", tempos[0]);
+
+            // Calcular a diferença entre o pior e o melhor tempo
+            printf("Diferenca entre o pior e o melhor: %.2f segundos\n",tempos[5] - tempos[0]);
 
         }
         
-            // OPCAO INVALIDA
-            else if (opcao != 0) {
-                printf("\nOpcao invalida! Tente novamente.\n");
-            }
+        // OPCAO INVALIDA
+        else if (op != 0) {
+            printf("\nOpcao invalida! Tente as opções de 0 a 7.\n");
+        }
     
-        } while (op != 0);
+    } while (op != 0);
         
-        printf("\nPrograma terminado!\n");
-
-        return 0;
-    }
-
+    printf("\nPrograma terminado! Att, Bruna Leite.\n");
+    return 0;
 }
-
 

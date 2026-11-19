@@ -335,6 +335,51 @@ int main(void) {
 
         } else if (op == 6) { // Exercício 7 - Desenho de Um Losango
 
+            // Declarar as variaveis
+            int altura;
+            int i, j;
+
+            printf("\n=== DESENHO DE UM LOSANGO ===\n");
+
+            // Pedir uma altura entre 2 e 10
+            do {
+                printf("Introduza a altura (2 a 10): ");
+                scanf("%d", &altura);
+
+                if (altura < 2 || altura > 10) {
+                    printf("Erro! Introduza um valor entre 2 e 10.\n");
+                }
+
+            } while (altura < 2 || altura > 10);
+
+            // Desenhar a parte superior do losango
+            for (i = 1; i <= altura; i++) {
+
+                for (j = 1; j <= altura - i; j++) {
+                    printf(" ");
+                }
+
+                for (j = 1; j <= 2 * i - 1; j++) {
+                    printf("*");
+                }
+
+                printf("\n");
+            }
+
+            // Desenhar a parte inferior do losango
+            for (i = altura - 1; i >= 1; i--) {
+
+                for (j = 1; j <= altura - i; j++) {
+                    printf(" ");
+                }
+
+                for (j = 1; j <= 2 * i - 1; j++) {
+                    printf("*");
+                }
+
+                printf("\n");
+            }
+
         } else if (op == 7) {
 
         }

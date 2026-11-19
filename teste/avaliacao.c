@@ -265,7 +265,75 @@ int main(void) {
 
         } else if (op == 5) { Exercício 6 - Pesquisa  de Encomendas
 
-        } else if (op == 6) {
+            // Declaracao das variaveis
+            int quantidades[8]; // Array para guardar as 8 quantidades
+            int i;
+            int total = 0;
+            int acima20 = 0;
+            int pesquisa;
+            int ocorrencias = 0;
+
+            printf("\n=== PESQUISA DE ENCOMENDAS ===\n");
+
+            // Registar as quantidades das 8 encomendas
+            for (i = 0; i < 8; i++) {
+
+                do {
+                    printf("Quantidade da encomenda %d: ", i + 1);
+                    scanf("%d", &quantidades[i]);
+
+                    // Verificar se a quantidade e negativa
+                    if (quantidades[i] < 0) {
+                        printf("Erro! A quantidade nao pode ser negativa.\n");
+                    }
+
+                } while (quantidades[i] < 0);
+
+                // Somar todas as quantidades
+                total = total + quantidades[i];
+
+                // Contar encomendas com mais de 20 unidades
+                if (quantidades[i] > 20) {
+                    acima20++;
+                }
+            }
+
+            // Apresentar todas as quantidades
+            printf("\nQuantidades registadas:\n");
+
+            for (i = 0; i < 8; i++) {
+                printf("%d ", quantidades[i]);
+            }
+
+            // Apresentar o total e a quantidade de encomendas acima de 20
+            printf("\n\nTotal de produtos: %d\n", total);
+            printf("Encomendas acima de 20 unidades: %d\n", acima20);
+
+            // Pedir a quantidade que queremos pesquisar
+            printf("\nQuantidade a pesquisar: ");
+            scanf("%d", &pesquisa);
+
+            // Procurar a quantidade no array
+            printf("\nEncontrada nas encomendas:\n");
+
+            for (i = 0; i < 8; i++) {
+
+                // Verificar se a quantidade corresponde a pesquisa
+                if (quantidades[i] == pesquisa) {
+                    printf("%d ", i + 1);
+                    ocorrencias++;
+                }
+            }
+
+            // Verificar se encontrou alguma quantidade
+            if (ocorrencias == 0) {
+                printf("Quantidade nao encontrada.");
+            }
+
+            // Apresentar o numero de ocorrencias
+            printf("\nTotal de ocorrencias: %d\n", ocorrencias);
+
+        } else if (op == 6) { // Exercício 7 - Desenho de Um Losango
 
         } else if (op == 7) {
 

@@ -92,9 +92,96 @@ int main(void) {
             }
 
         } else if (op == 3) { // Exercício 4 - Sequências Numéricas
+
+            int numero;
+            int somaPares = 0;
+
+            printf("\n=== SEQUENCIAS NUMERICAS ===\n");
+
+            do {
+                printf("Introduza um numero (1 a 50): ");
+                scanf("%d", &numero);
+            } while (numero < 1 || numero > 50);
+
+            printf("\nOrdem crescente:\n");
+
+            for (int i = 1; i <= numero; i++) {
+                printf("%d ", i);
+            }
+
+            printf("\n\nOrdem decrescente:\n");
+
+            for (int i = numero; i >= 1; i--) {
+                printf("%d ", i);
+            }
+
+            printf("\n\nMultiplos de 3:\n");
+
+            for (int i = 1; i <= numero; i++) {
+                if (i % 3 == 0) {
+                    printf("%d ", i);
+                }
+            }
+
+            for (int i = 1; i <= numero; i++) {
+                if (i % 2 == 0) {
+                    somaPares += i;
+                }
+            }
+
+            printf("\n\nSoma dos numeros pares: %d\n", somaPares);
             
         
-        } else if (op == 4) {
+        } else if (op == 4) { // Exercício 5 - Análise de Temperaturas
+
+            float temperaturas[7];
+            float soma = 0;
+            float media, maxima, minima;
+            int diasAcima25 = 0;
+            int diaMaxima = 1;
+
+            printf("\n=== ANALISE DE TEMPERATURAS ===\n");
+
+            for (int i = 0; i < 7; i++) {
+                printf("Dia %d: ", i + 1);
+                scanf("%f", &temperaturas[i]);
+            }
+
+            maxima = temperaturas[0];
+            minima = temperaturas[0];
+
+            printf("\nTemperaturas:\n");
+
+            for (int i = 0; i < 7; i++) {
+                printf("%.2f ", temperaturas[i]);
+            }
+
+            for (int i = 0; i < 7; i++) {
+
+                soma += temperaturas[i];
+
+                if (temperaturas[i] > maxima) {
+                    maxima = temperaturas[i];
+                    diaMaxima = i + 1;
+                }
+
+                if (temperaturas[i] < minima) {
+                    minima = temperaturas[i];
+                }
+
+                if (temperaturas[i] > 25) {
+                    diasAcima25++;
+                }
+            }
+
+            media = soma / 7;
+
+            printf("\n\nMedia semanal: %.2f\n", media);
+            printf("Temperatura maxima: %.2f\n", maxima);
+            printf("Temperatura minima: %.2f\n", minima);
+            printf("Dias acima de 25 graus: %d\n", diasAcima25);
+            printf("Primeiro dia da temperatura maxima: %d\n", diaMaxima);
+    
         
         } else if (op == 5) {
             
